@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Rubrics | Debate Scoring{% endblock %}
+{% block content %}
+<h1>Rubrics</h1>
+<ul class="list-group">
+  {% for rubric in rubrics %}
+  <li class="list-group-item">
+    <strong>{{ rubric.name }}</strong>
+    <p>{{ rubric.description }}</p>
+  </li>
+  {% empty %}
+  <li class="list-group-item">No rubrics have been created yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

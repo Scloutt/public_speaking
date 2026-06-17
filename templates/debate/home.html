@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home | Debate Scoring{% endblock %}
+{% block content %}
+<h1>Active Teams</h1>
+<ul class="list-group">
+  {% for team in teams %}
+  <li class="list-group-item">{{ team.name }}{% if team.school %} — {{ team.school }}{% endif %}</li>
+  {% empty %}
+  <li class="list-group-item">No active teams yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

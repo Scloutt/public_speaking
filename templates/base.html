@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Debate Scoring{% endblock %}</title>
+    <link rel="stylesheet" href="/static/dist/style.css" />
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body>
+    <div class="container py-4">
+      <nav class="mb-4">
+        <a href="{% url 'debate:home' %}">Home</a> |
+        <a href="{% url 'debate:submission_create' %}">Submit Score</a> |
+        <a href="{% url 'debate:rubric_list' %}">Rubrics</a>
+      </nav>
+      {% if messages %}
+      <div>
+        {% for message in messages %}
+          <div>{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+    <script type="module" src="/static/dist/main.js"></script>
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>

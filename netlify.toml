@@ -1,0 +1,7 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "static/dist"
+
+[dev]
+  command = "npm run dev"
+  port = 5173
